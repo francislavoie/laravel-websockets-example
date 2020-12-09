@@ -1,0 +1,20 @@
+# Docs: https://caddyserver.com/docs
+
+{$CADDY_HOST_LABEL} {
+  log
+
+  root * {$APP_CODE_PATH}/public
+  encode gzip
+
+  @ws {
+    header Connection *Upgrade*
+    header Upgrade websocket
+  }
+  reverse_proxy @ws websockets:6001
+
+  # If you have multiple websocket containers to proxy to, do something like this instead:
+  # reverse_proxy @ws websockets_1:6001 websocket_2:6001 websocket_3:6001
+
+  php_fastcgi php-fpm:9000
+  file_server
+}

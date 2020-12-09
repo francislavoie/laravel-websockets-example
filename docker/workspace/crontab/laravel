@@ -1,0 +1,1 @@
+* * * * * laravel /usr/bin/php ${APP_CODE_PATH}/artisan schedule:run >> /dev/null 2>&1
