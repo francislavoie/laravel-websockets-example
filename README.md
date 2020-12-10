@@ -47,10 +47,10 @@ This README assumes you already know how to use Laravel, in general.
     - Service definitions for everything you need to run the app
     - Uses variables from `docker/.env` which can be overridden
     - The `workspace` container gives you somewhere to run your development/maintenance tasks
-- [`docker/.env`](docker/.env)
+- [`docker/.env`](docker/.env.example)
     - Change the `CADDY_HOST_LABEL` variable to your domain name to serve the app automatically over HTTPS  with certificates fetched from Let's Encrypt (please read the Caddy docs!)
     - Change the `COMPOSE_PROJECT_NAME` to some better name for your project, is used by `docker-compose` to namespace the container and network names
-    - Change the `DB_*` variables to secure your database (generate random passwords!!), and also update your [`.env`](.env) with the same values.
+    - Change the `DB_*` variables to secure your database (generate random passwords!!), and also update your [`.env`](.env.example) with the same values.
         - `DB_DATABASE`
         - `DB_USER`
         - `DB_PASSWORD`
